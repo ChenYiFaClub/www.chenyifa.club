@@ -13,20 +13,24 @@
 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 		<style>.strong,.strong a{color:#d9534f;}</style>
 		
-		<script>
-			!function(){
-				var _page=document.getElementsByTagName('LINK')[0].href;
-				if(
-					/^https?:$/.test(location.protocol)
-					&&
-					location.href.split('#')[0]!==_page
-				){
-					location.replace(_page+location.hash);
-				}
-			};
-		</script>
-		
 		<base target="_blank" />
+		
+		<script>
+			
+			!function(){
+				var _page=document.getElementsByTagName('LINK')[0].href.split('?')[0];
+				/^https?:$/.test(location.protocol)&&location.href.split('#')[0].split('?')[0]!==_page&&location.replace(_page+location.search+location.hash);
+			}();
+			
+			var _hmt=_hmt||[];
+			(function(){
+				var hm=document.createElement("script");
+				hm.src="https://hm.baidu.com/hm.js?d4afa2371eaffb11a837a47948bb5980";
+				var s=document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm,s);
+			})();
+			
+		</script>
 		
 	</head>
 	<body>
